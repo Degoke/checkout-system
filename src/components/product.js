@@ -5,7 +5,7 @@ const Product = ({product}) => {
     const {items, setItems} = useContext(CartContext)
 
     const addToCart = () => {
-        items.map((i, index) => {
+        items.forEach((i, index) => {
             if(i.id === product.id){
                 product.count ++;
                 items.splice(index, 1);

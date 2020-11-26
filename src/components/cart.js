@@ -14,7 +14,7 @@ const Cart = () => {
       data[i] = JSON.parse(sessionStorage[x]);
     }
     setItems(data);
-  }, []);
+  }, [setItems]);
 
   useEffect(() => {
     items.forEach(
