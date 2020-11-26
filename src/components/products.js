@@ -15,16 +15,18 @@ const Products = () => {
 
   const changeCategory = (e) => {
     setCategory(e.target.name);
+    document.querySelector('.active').classList.remove('active')
+    e.target.classList.add('active')
   };
 
   return (
     <section>
-      <h1>Products</h1>
-      <nav>
+      <h1 className='center-text'>Products</h1>
+      <nav className='navbar'>
         <ul>
           <li>
-            <button name="all" onClick={changeCategory}>
-              All
+            <button name="all" className='active' onClick={changeCategory}>
+              All Products
             </button>
           </li>
           <li>
@@ -50,7 +52,7 @@ const Products = () => {
           </li>
         </ul>
       </nav>
-      <div>
+      <div className='products'>
         {category === "all"
           ? products.map((product) => <Product product={product}  />)
           : products
