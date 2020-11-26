@@ -50,7 +50,7 @@ const Cart = () => {
           <CartItems item={item} />
         ))}
         <button onClick={clear}>Clear Cart</button>
-        <h3>Total: ${total}</h3>
+        <h3>Total: ${total.toFixed(2)}</h3>
         <StripeCheckout
           stripeKey="pk_test_51HrTf7Bd9JsdvqhAWTlNGmsrf92k9SbdFsBUrEEdQ5eJ2a7Hc2CEngZhee6GPvRgtYWkeXHxLZAPDqQmHCtkioz800nV3IROwP"
           amount={total * 100}

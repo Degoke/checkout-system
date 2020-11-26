@@ -29,7 +29,7 @@ const Product = ({product}) => {
             <img src={product.image} width='150'  alt='' />
             <h3>${product.fixprice}</h3>
             <p>{product.description}</p>
-            <button onClick={addToCart}>Add to cart</button>
+            <button className='add' onClick={addToCart}>Add to cart</button>
           </div>
     )
 }
