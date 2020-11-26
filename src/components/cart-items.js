@@ -11,7 +11,7 @@ const CartItems = ({item}) => {
          item.price = item.fixprice * item.count
         switch(e.target.id){
             case 'add':
-            items.map((i, index) => {
+            items.forEach((i, index) => {
             if(i.id === item.id){
                 item.count ++;
                 
@@ -22,7 +22,7 @@ const CartItems = ({item}) => {
         setItems(state => [...state, {...item, price: item.fixprice * item.count}])
         break
         case 'subtract':
-        items.map((i, index) => {
+        items.forEach((i, index) => {
             if(i.id === item.id){
                 if(item.count > 1)(
                     item.count --
@@ -34,13 +34,17 @@ const CartItems = ({item}) => {
         setItems(state => [...state, {...item, price: item.fixprice * item.count}])
         break
         case 'delete':
-         items.map((i, index) => {
-             if (i.id === item.id) {
-                 sessionStorage.removeItem(i.id)
-                 setItems(state => state.splice(index, 1))
-                 console.log(items)
-            }
-        })
+         items.forEach((i, index) => {
+             setItems(state => state.filter(j => {
+                   return j.id !== item.id
+             })
+             )
+                //items.splice(index, 1);
+                sessionStorage.removeItem(i.id)
+         })
+                break
+            default:
+                setItems(state => state)
     }
     }
     return(
