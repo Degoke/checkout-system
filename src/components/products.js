@@ -10,22 +10,31 @@ const Products = () => {
       method: "GET",
     })
       .then((res) => res.json())
-      .then((data) => setProduct(data.map(i => ({...i, count: 1, fixprice: i.price}))));
+      .then((data) =>
+        setProduct(data.map((i) => ({ ...i, count: 1, fixprice: i.price })))
+      );
   }, []);
 
   const changeCategory = (e) => {
     setCategory(e.target.name);
-    document.querySelector('.active').classList.remove('active')
-    e.target.classList.add('active')
+    document.querySelector(".active").classList.remove("active");
+    e.target.classList.add("active");
+  };
+
+  const openCart = () => {
+    document.querySelector(".cart").classList.add("show");
   };
 
   return (
     <section>
-      <h1 className='center-text'>Products</h1>
-      <nav className='navbar'>
+      <h1 className="center-text">PRODUCTS</h1>
+      <button className="cart-button" onClick={openCart}>
+        View cart
+      </button>
+      <nav className="navbar">
         <ul>
           <li>
-            <button name="all" className='active' onClick={changeCategory}>
+            <button name="all" className="active" onClick={changeCategory}>
               All Products
             </button>
           </li>
@@ -46,15 +55,14 @@ const Products = () => {
           </li>
           <li>
             <button name="electronics" onClick={changeCategory}>
-              
               Electronics
             </button>
           </li>
         </ul>
       </nav>
-      <div className='products'>
+      <div className="products">
         {category === "all"
-          ? products.map((product) => <Product product={product}  />)
+          ? products.map((product) => <Product product={product} />)
           : products
               .filter((product) => category === product.category)
               .map((item) => <Product product={item} />)}

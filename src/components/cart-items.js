@@ -7,7 +7,6 @@ const CartItems = ({item}) => {
     const {items, setItems} = useContext(CartContext)
 
     const handleClick = (e) => {
-         console.log(e)
          item.price = item.fixprice * item.count
         switch(e.target.id){
             case 'add':
@@ -34,7 +33,7 @@ const CartItems = ({item}) => {
         setItems(state => [...state, {...item, price: item.fixprice * item.count}])
         break
         case 'delete':
-         items.forEach((i, index) => {
+         items.forEach((i) => {
              setItems(state => state.filter(j => {
                    return j.id !== item.id
              })
@@ -52,7 +51,7 @@ const CartItems = ({item}) => {
             <img src={item.image} alt='' width='50' />
             <p>{item.title} </p>
             <p>Quantity: {item.count}</p>
-            <p>Price: ${item.price}</p>
+            <p>Price: ${item.price.toFixed(2)}</p>
         <button id='add' onClick={handleClick}>Increase Quantity</button> <button id='subtract' onClick={handleClick}>Decrease Quantity</button> <button id='delete' onClick={handleClick}>Remove Item</button>
         </div>
     )

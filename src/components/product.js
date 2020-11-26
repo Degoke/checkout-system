@@ -16,7 +16,7 @@ const Product = ({product}) => {
     }
 
     useEffect(() => {
-        items.map(i => {
+        items.forEach(i => {
             sessionStorage.setItem(`${i.id}`, JSON.stringify(i))
         }, [items])
     })

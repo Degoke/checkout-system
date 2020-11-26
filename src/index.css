@@ -1,73 +1,103 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
 
-button{
-    padding: 0.5rem;
-    background: white;
-    border: 1px solid black;
+button {
+  padding: 0.5rem;
+  background: white;
+  border: 1px solid black;
 }
 
-button:hover{
-    cursor: pointer;
-    color: white;
-    background: black;
+button:hover {
+  cursor: pointer;
+  color: white;
+  background: black;
 }
 
-.wrapper{
-    padding: 2rem;
-    margin: auto;
+.wrapper {
+  padding: 2rem;
+  margin: auto;
 }
 
-.navbar ul{
-    display: flex;
-    justify-content: space-evenly;
-    width: 60%;
-    margin: 2rem auto;
+.navbar ul {
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+  margin: 2rem auto;
 }
 
-.center-text{
-    text-align: center;
+.center-text {
+  text-align: center;
 }
 
-.products{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1rem
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
 }
 
-.box{
-    border: 1px solid black;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+.box {
+  border: 1px solid black;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
-.box img{
-    align-self: center;
+.box img {
+  align-self: center;
 }
 
-.active{
-    color: white;
-    background: black;
+.active {
+  color: white;
+  background: black;
 }
 
-.cart{
-    padding: 2rem;
-    width: 50%;
-    margin: auto;
+.cart {
+  position: absolute;
+  display: none;
+  width: 100%;
+  padding: 2rem 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.cart-box{
-    border: 1px solid black;
-    margin-bottom: 2rem;
-    margin: 0.5rem auto;
-    padding: 1rem;
+.cart-box {
+  border: 1px solid black;
+  margin-bottom: 2rem;
+  margin: 0.5rem auto;
+  padding: 1rem;
+}
+
+.cart-box > * {
+  margin-bottom: 0.5rem;
+}
+
+.overlay > * {
+  margin-bottom: 0.5rem;
+}
+
+.cart-button {
+  float: right;
+}
+
+.show {
+  display: block;
+}
+
+.overlay {
+  padding: 2rem;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  background: white;
+}
+
+.back {
+  margin-left: 1.5rem;
 }
