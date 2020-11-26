@@ -20,6 +20,17 @@ button:hover {
   background: black;
 }
 
+.add{
+  color: white;
+  background: black;
+}
+
+.add:hover{
+  background: white;
+  border: 1px solid black;
+  color: black
+}
+
 .wrapper {
   padding: 2rem;
   margin: auto;
