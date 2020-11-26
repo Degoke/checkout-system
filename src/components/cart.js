@@ -45,7 +45,7 @@ const Cart = () => {
         }
 
     return(
-        <div>
+        <div className='cart'>
         {items.map(item => <CartItems  item={item} />)}
         <button onClick={clear}>Clear</button>
         <h3>{total}</h3>

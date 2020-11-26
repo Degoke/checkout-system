@@ -1,6 +1,6 @@
 import Products from './components/products';
 import Cart from './components/cart';
-import {useState, useContext, useEffect, useMemo, createContext} from 'react';
+import {useState, useMemo, createContext} from 'react';
 
 export const CartContext = createContext(null);
 
@@ -11,10 +11,9 @@ const App = () => {
 
   return (
     <CartContext.Provider value={Provider}>
-    <main>
-    <Cart />
-      <Products />
-      
+    <main className='wrapper'>
+        <Products />
+        <Cart />
     </main>
     </CartContext.Provider>
   )

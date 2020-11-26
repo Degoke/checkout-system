@@ -24,10 +24,10 @@ const Product = ({product}) => {
 
 
     return (
-        <div id={product.id} key={product.id}>
-            <p>{product.title}</p>
+        <div  className='box' id={product.id} key={product.id}>
+            <h2>{product.title}</h2>
             <img src={product.image} width='150'  alt='' />
-            <p>{product.fixprice}</p>
+            <h3>${product.fixprice}</h3>
             <p>{product.description}</p>
             <button onClick={addToCart}>Add to cart</button>
           </div>
