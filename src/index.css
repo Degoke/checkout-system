@@ -20,16 +20,6 @@ button:hover {
   background: black;
 }
 
-.add{
-  color: white;
-  background: black;
-}
-
-.add:hover{
-  background: white;
-  border: 1px solid black;
-  color: black
-}
 
 .wrapper {
   padding: 2rem;
@@ -111,4 +101,37 @@ button:hover {
 
 .back {
   margin-left: 1.5rem;
+}
+
+
+@media all and (max-width: 900px){
+  .navbar ul{
+    width: 80%;
+  }
+  
+  .products{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media all and (max-width: 680px){
+  .navbar ul{
+    width: 100%;
+  }
+
+  .wrapper{
+    padding: 1rem;
+  }
+}
+
+@media all and (max-width: 600px){
+  .products{
+    grid-template-columns: 1fr;
+  }
+  .wrapper{
+    padding: 0.5rem;
+  }
+  .navbar ul{
+    flex-wrap: wrap;
+  }
 }
